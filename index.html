@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L9</title>
+
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="table">
+            <div class="row" id="main">
+                <header class="col-md navbar-brand">
+                    Company "Neue Welt"
+                </header>
+                <nav class="col-md navbar-collapse navbar-expand navbar-dark bg-dark" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../L1/Z1/file1.html">L1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../L2/file1.html">L2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../L3/Anketa.html">L3</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../L4/index.html">L4</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../L5/index.html">L5</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../L8/index.html">L8</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                <article class="col-md-9">
+                    <button type="button" class="btn btn-info btn-lg" data-bs-toggle="modal" data-bs-target="#modalForm">Відкрити форму</button>
+                    <div><p id="text"></p></div>
+                </article>
+            </div>
+        </div>
+        
+        <div id="modalForm" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Введіть дані:</h4>
+                        <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="monitorType">Тип монітора: </label>
+                                <input type="text" class="form-control" id="monitorType" placeholder="Введіть тип монітора">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="resolution">Роздільна здатність: </label>
+                                <input type="text" class="form-control" id="resolution" placeholder="Введіть роздільну здатність">
+
+                                <label for="colorNumber">Кількість кольорів: </label>
+                                <input type="text" class="form-control" id="colorNumber" placeholder="Введіть кількість кольорів">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="submitFormBtn" type="submit" class="btn btn-default" data-bs-dismiss="modal">Save changes</button>
+                        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+        <script>
+            document.getElementById("submitFormBtn").addEventListener("click", function(){
+                let monitorType = document.getElementById("monitorType").value;
+                let resolution = document.getElementById("resolution").value;
+                let colorNumber = document.getElementById("colorNumber").value;
+                
+                document.getElementById("text").style.color = "#00ff00";
+                document.getElementById("text").innerHTML = "Привіт. Одержані дані: <br/>Тип монітора: " + monitorType + "<br/>Роздільна здатність: " + resolution + "<br/>К-сть кольорів: " + colorNumber;
+            });
+        </script>
+    </body>
+</html>
